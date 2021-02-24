@@ -1,0 +1,29 @@
+<odoo>
+
+    <record id="custom_crm_visit_wizard_form" model="ir.ui.view">
+        <field name="name">custom.crm.visit.wizard.form</field>
+        <field name="model">custom_crm.visit.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Elige tu cita para la visita">
+                <group class="oe_title">
+                    <field name="visit_id"/>
+                    <field name="appointment_date"/>
+                </group>
+                <footer>
+                    <button name="create_appointment" string="Generar" type="object" class="btn-primary"/>
+                    <button string="Cancelar" special="cancel" clas="btn btn-danger"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="custom_crm_visit_wizard" model="ir.actions.act_window">
+        <field name="name">Crear Cita</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">custom_crm.visit.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="custom_crm_visit_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

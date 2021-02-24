@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="visit_demo_01" model="custom_crm.visit">
+            <field name="name">Visita 1</field>
+            <field name="customer">26</field>
+            <field name="date">2020-02-20</field>
+            <field name="type">P</field>
+            <field name="done">0</field>
+        </record>
+        <record id="visit_demo_02" model="custom_crm.visit">
+            <field name="name">Visita 2</field>
+            <field name="customer">35</field>
+            <field name="date">2020-02-20</field>
+            <field name="type">W</field>
+            <field name="done">1</field>
+        </record>
+    </data>
+</odoo>

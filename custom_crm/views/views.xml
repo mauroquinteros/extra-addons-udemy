@@ -65,9 +65,11 @@
                   <img alt="Avatar" t-att-src="kanban_image('custom_crm.visit', 'image', record.id.raw_value)"/>
                 </div>
                 <div class="oe_kanban_details">
-                  <strong class="o_kanban_record_title">
-                    <field name="name"/>
+                  <strong style="display: block;" class="o_kanban_record_title">
                     <field name="customer"/>
+                  </strong>
+                  <strong style="display: block;" class="o_kanban_record_title">
+                    <field name="name"/>
                   </strong>
                   <div t-if="record.date.value">
                     <t t-esc="record.date.value"/>
@@ -79,10 +81,6 @@
               </div>
             </t>
           </templates>
-          <field name="customer"/>
-          <field name="name"/>
-          <field name="type"/>
-          <field name="date"/>
         </kanban>
       </field>
     </record>
@@ -92,7 +90,7 @@
       <field name="name">view.custom.crm.visit.search</field>
       <field name="model">custom_crm.visit</field>
       <field name="arch" type="xml">
-        <search string="Filtrar Visitas">
+        <search>
           <field name="name"/>
           <field name="customer"/>
           <field name="type"/>
@@ -123,7 +121,7 @@
     <!-- Visit Menu -->
     <menuitem id="menu_custom_crm_root" name="Custom CRM" sequence="10" />
     <menuitem id="menu_custom_crm_visit_category" name="Operaciones" parent="menu_custom_crm_root" sequence="0"/>
-    <menuitem id="menu_custom_crm_viist_wizard" name="Wizard" parent="menu_custom_crm_root" sequence="1" action="custom_crm.custom_crm_visit_wizard"/>
+    <menuitem id="menu_custom_crm_visit_wizard" name="Wizard" parent="menu_custom_crm_root" sequence="1" action="custom_crm_visit_wizard"/>
     <menuitem id="menu_custom_crm_visit" name="Visitas" parent="menu_custom_crm_visit_category" sequence="0" action="action_custom_crm_visit_view"/>
   </data>
 </odoo>

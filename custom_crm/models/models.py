@@ -49,4 +49,15 @@ class Visit(models.Model):
         visit.unlink()
 
 
+class VisitReport(models.AbstractModel):
+    _name = 'report.custom_crm.report_visit_card'
 
+    @api.model
+    def _get_report_values(self, docIds, data: None):
+        report_obj = self.env['ir.actions.report']
+        # report = report_obj._get_report_from_name('custom_crm.report_visit_card')
+        return {
+            'doc_ids': docIds,
+            'doc_model': self.env['custom_crm.visit'],
+            'docs': self.env['custom_crm.visit'].browse(docIds)
+        }

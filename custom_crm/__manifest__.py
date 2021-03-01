@@ -28,6 +28,7 @@
         'views/wizard.xml',
         'views/views.xml',
         'views/templates.xml',
+        'reports/visit.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
